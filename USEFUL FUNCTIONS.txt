@@ -1,0 +1,100 @@
+Custom Tools I created in preamble
+
+
+Add figures
+    \fig{filepath}{0>linewidth<1}{caption}{label}
+Add tables that are images
+    \tablefig{filepath}{0>linewidth<1}{caption}{label}
+
+  
+
+White space between paragraphs:
+    Paragraph text.\p
+    %line break
+    Next paragraph
+
+
+
+
+
+Lists - 	
+\listbeg
+	\x Numer
+		\xx Bullet
+			\xxx asdf
+\listend
+
+
+
+
+
+
+Common tools
+
+\section{name}
+	\subsection{name}
+		\label{label} %can reference any (sub)section if wanted
+		\subsubsection{name}
+				\paragraph{name} 
+					\subparagraph{name} 
+
+
+
+
+\begin{enumerate}[label=\Roman*, font=\bfseries]
+    \item Creates number list with bold numbers
+    \item
+\end{enumerate}
+
+
+
+
+
+\clearpage %makes sure next sections starts on new page
+
+
+
+
+\begin{itemize}
+	\item creates list with bullets
+\end{itemize}
+
+
+
+
+Adding a table - first built table in libre and right click to paste in sublime.  OR use the LATEX table website and copy.
+OR
+
+\def \tscale{.75} %Sets Table scale to be consistent throughout section - Add at beginning of section or document
+
+\begin{table}[H]
+\centering
+\small
+\resizebox{\textwidth}{!}{ %forces table to span textwidth
+\setlength{\tabcolsep}{5pt} %distance is text from boarders
+\renewcommand{\arraystretch}{1.8} % height of row relative to default
+\begin{tabular}{|p{2in} l c l l p{.5\linewidth|}
+
+TABLE - http://www.tablesgenerator.com/
+
+\end{tabular}
+} %closure for resizebox
+\caption{caption}
+\label{hierarchy} %for ref
+\end{table}
+
+
+
+Font Sizes
+\tiny	
+\scriptsize	
+\footnotesize	
+\small	
+\normalsize	
+\large	
+\Large	
+\LARGE	
+\huge	
+\Huge
+
+

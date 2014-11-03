@@ -1,0 +1,115 @@
+\ProvidesPackage{00preamble}
+
+%Should not have to touch these settings.
+\usepackage[utf8]{inputenc} %encoding
+\usepackage{multicol}
+\usepackage{amsmath, amssymb,amsfonts} %American Mathematcal Society - for equations
+%\usepackage{hyperref} %allows use of hyperlinks - already loaded with pdfpages
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+%\usepackage[top=1.in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+\usepackage[top=.9in, left= 1.in, right = 1.in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{abstract}
+\usepackage{ragged2e} %prevents hyphenation at end of lines \raggedright
+\usepackage{afterpage} %Used to identfy commands after page ends
+\usepackage{lastpage} %Needed for Footer
+\usepackage[final]{pdfpages} %allows inserting of multiple pdf pages/docs
+\usepackage[hidelinks]{hyperref} %Make TOC linkable
+\usepackage{pdfpages} %Add pdf pages (ie appendix and specs)
+\usepackage{Tabbing} %allows accent and complex letters in Tables
+\usepackage{setspace} %changes linspacing
+\usepackage{float} %improves figure/table placement on the page
+\usepackage{outlines} % Good for note taking
+\usepackage{enumitem} %formates  ea. level out outlines
+\usepackage{cite} %adds bibtext package.  See 00references.bib file for instructions
+\usepackage[nottoc,notlot,notlof]{tocbibind} %Adds References section to the toc
+\usepackage[acronym,nonumberlist]{glossaries} % adds glossary package to create Acronyms sheet
+\makeglossaries % I cannot get this to work at the moment
+
+\setcounter{secnumdepth}{3} %Depth of subsection numbering
+\setcounter{tocdepth}{2} %Depth of TOC
+\renewcommand{\contentsname}{{\normalsize Topics Covered}} %table of contents title
+
+\setlength{\columnsep}{.5in} %column separation
+
+%Creates Header and Footer AND sets offsets
+\pagestyle{fancy}
+\lhead{\HeaderLogo}
+%\chead{\DocTitle \- v.\DocVer}
+\rhead{\DocDate}
+\lfoot{\DocAuthor}
+\cfoot{\DocClassName}
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+\setlength{\headheight}{45.1pt} %distance from margin in \usepackage{geometry} to text, 45.1 based on error message
+\setlength{\headsep}{.25in} %seperation btw text and header rule
+\setlength{\textheight}{8.5in} %length of text from margin in \usepackage{geometry}
+%other options
+% \hoffset
+% \voffset
+% \oddsidemargin = 18pt 4 
+% \topmargin = 0pt
+% \headheight = 12pt 
+% \headsep = 25pt
+% \textheight = 609pt 8 
+% \textwidth = 424pt
+% \marginparsep = 11pt 10 
+% \marginparwidth = 54pt
+% \footskip = 30pt 
+% \marginparpush = 5pt (not shown)
+% \hoffset = 0pt 
+% \setle\voffset = 0pt
+% \paperwidth = 597pt 
+% \paperheight = 845pt
+
+%sets up abstract
+\renewcommand{\abstractname}{\DocTitle\ Summary}
+\renewcommand{\absnamepos}{flushleft}
+ 
+%%% sets indents on lists %%%
+\setlist[enumerate]{leftmargin=.5in, rightmargin=.5in}
+\setlist[itemize]{leftmargin=.5in, rightmargin=.5in}
+
+\setlength{\parindent}{0in} %Sets indent on paragraphs 
+
+
+%\newcommand{\p}{\vspace{7pt}} %sets white space between paragraphs
+%\newcommand{\p}{\\[7pt]}
+
+
+%%%%%%%%% TOOLS %%%%%%%
+%Figure Placement - \fig{filepath}{0>linewidth<1}{caption}{type:label}
+\newcommand{\fig}[4]
+{
+    \begin{figure}[H] %places image HERE
+    \centering
+    \includegraphics[width=#2\linewidth]{images/#1}
+    \caption{#3}
+    \label{#4}
+    \end{figure}
+}
+
+\newcommand{\tablefig}[4]
+{
+    \begin{table}[H]
+    \centering
+    % \begin{figure} %places image HERE
+    \includegraphics[width=#2\linewidth]{images/#1}
+    % \end{figure}
+    \caption{#3}
+    \label{#4}
+    \end{table}
+}
+
+
+%Outline shortcuts
+\renewcommand{\outlinei}{enumerate}
+\newcommand{\listbeg}{\begin{outline}}
+\newcommand{\listend}{\end{outline}}
+\newcommand{\x}{\1}
+\newcommand{\xx}{\2}
+\newcommand{\xxx}{\3}
+\newcommand{\xxxx}{\4}
+%

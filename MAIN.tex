@@ -1,0 +1,67 @@
+
+
+\documentclass[11pt,letterpaper]{article}
+\usepackage{00preamble}
+
+
+%%% Document Specific Information %%%
+\newcommand{\DocClassName}{ }
+\newcommand{\DocTitle}{Characterization and Design of Solid State Hinges for Deployable CubeSat Structures} %Needed for abstract
+\newcommand{\DocVer}{1}
+\newcommand{\DocDate}{\today}
+\newcommand{\DocAuthor}{Authors: C.\ Patmont; E. \ Ziade}
+\newcommand{\HeaderLogo}{\includegraphics[width=2.5cm]{images/00_header-logo-BUSAT}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Figure Sample: \fig{filename}{% of text width size}{caption}{ref}  
+
+
+
+\begin{document}
+\begin{spacing}{1.1}
+
+%Cover Page
+\input{sections/00_Cover_Page}
+
+
+\include{sections/01_Abstract}  %% inserts abstract %%
+%\clearpage
+%%\section*{Change Page}                     	\input{sections/02_Change_Page}
+%%\clearpage
+%\include{03_Acronyms}
+%\printglossary[type=\acronymtype]
+
+
+\tableofcontents
+\addtocontents{toc}{\hfill\textbf{Page}\par}
+\vspace{10pt}
+\hrule
+\clearpage
+\begin{multicols}{2}
+
+\section{Introduction} \label{section_intro}	                \input{sections/10_Introduction}
+\clearpage
+\section{Experiment Background} \label{section_methods}	        \input{sections/11_Test_Methods_and_Apparatuses}
+\clearpage
+\section{Experiment Description} \label{section_results}	    \input{sections/12_Experimental_Results}
+\clearpage
+\section{Equipment Description} \label{section_discussion}	    \input{sections/13_Discussion_of_Results}
+\clearpage
+\end{multicols}
+
+\section{Appendix}  \label{section_appendix}                    \input{sections/98_Appendix} 
+
+
+%% References
+\clearpage
+\bibliography{sections/99_Bibliography} %inserts references page
+\nocite{*} %lists all references in bibliography with @ in front - remove if you only want to list ONLY references actually references in doc.
+\bibliographystyle{plain} %style of bibliography
+\clearpage
+
+
+
+\cleardoublepage
+\end{spacing}
+
+\end{document}
